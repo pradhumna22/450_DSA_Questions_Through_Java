@@ -9,8 +9,8 @@ public class GFG {
     static void fillCharCounts(String str,
                                    int[] count)
     {
-        for (int i = 0; i < str.length(); i++)
-            count[str.charAt(i)]++;
+        for (int j = 0; j < str.length(); j++)
+            count[str.charAt(j)]++;
     }
  
     /* Print duplicates present
@@ -23,10 +23,10 @@ public class GFG {
         int count[] = new int[NO_OF_CHARS];
         fillCharCounts(str, count);
  
-        for (int i = 0; i < NO_OF_CHARS; i++)
-            if (count[i] > 1)
-                System.out.println((char)(i) +
-                          ", count = " + count[i]);
+        for (int j = 0; j < NO_OF_CHARS; j++)
+            if (count[j] > 1)
+                System.out.println((char)(j) +
+                          ", count = " + count[j]);
     }
  
     // Driver Method
