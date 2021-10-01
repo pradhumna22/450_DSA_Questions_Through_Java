@@ -7,8 +7,8 @@ class Test {
 
 
   // length of result string should be equal to sum of two strings
-  static boolean checkLength(String first, String second, String result) {
-    if (first.length() + second.length() != result.length()) {
+  static boolean checkLength(String first1, String second2, String result) {
+    if (first1.length() + second2.length() != result.length()) {
       return false;
     }
     else {
@@ -32,11 +32,11 @@ class Test {
 
   // this method compares each character of the result with 
   // individual characters of the first and second string
-  static boolean shuffleCheck(String first, String second, String result) {
+  static boolean shuffleCheck(String first1, String second2, String result) {
     
     // sort each string to make comparison easier
-    first = sortString(first);
-    second = sortString(second);
+    first1 = sortString(first);
+    second2 = sortString(second);
     result = sortString(result);
 
     // variables to track each character of 3 strings
@@ -47,12 +47,12 @@ class Test {
 
       // check if first character of result matches
       // with first character of first string
-      if (i < first.length() && first.charAt(i) == result.charAt(k))
+      if (i < first.length() && first1.charAt(i) == result.charAt(k))
         i++;
 
       // check if first character of result matches
       // with the first character of second string
-      else if (j < second.length() && second.charAt(j) == result.charAt(k))
+      else if (j < second2.length() && second2.charAt(j) == result.charAt(k))
         j++;
 
       // if the character doesn't match
@@ -66,7 +66,7 @@ class Test {
 
     // after accessing all characters of result
     // if either first or second has some characters left
-    if(i < first.length() || j < second.length()) {
+    if(i < first1.length() || j < second2.length()) {
       return false;
     }
 
@@ -75,18 +75,18 @@ class Test {
 
   public static void main(String[] args) {
 
-    String first = "XY";
-    String second = "12";
+    String first1 = "XY";
+    String second2 = "12";
     String[] results = {"1XY2", "Y1X2", "Y21XX"};
 
     // call the method to check if result string is
     // shuffle of the string first and second
     for (String result : results) {
-      if (checkLength(first, second, result) == true && shuffleCheck(first, second, result) == true) {
-        System.out.println(result + " is a valid shuffle of " + first + " and " + second);
+      if (checkLength(first1, second2, result) == true && shuffleCheck(first1, second2, result) == true) {
+        System.out.println(result + " is a valid shuffle of " + first1 + " and " + second2);
       }
       else {
-        System.out.println(result + " is not a valid shuffle of " + first + " and " + second);
+        System.out.println(result + " is not a valid shuffle of " + first1 + " and " + second2);
       }
     }
   }
